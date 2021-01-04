@@ -11,7 +11,7 @@ import pandas as pd
     # - release_year
     # - rating
     # - duration
-all = pd.read_csv("netflix_titles.csv")
+all = pd.read_csv("datasets/netflix_titles.csv")
 years_preCorona = []
 years_2020 = []
 years = []
@@ -37,7 +37,7 @@ for year, typ, title, rating in zip(all['release_year'],all['type'], all['title'
     # - endYear (YYYY): TV Series end year. for all other title types.
     # - runtimeMinutes: Primary runtime of the title, in minutes.
     # - genres (string array): Includes up to three genres associated with the title.
-genre_imdb = pd.read_csv("genre.tsv", sep='\t')
+genre_imdb = pd.read_csv("datasets/genre.tsv", sep='\t')
 
 genre_title = {}
 for title, genre in zip(genre_imdb['originalTitle'], genre_imdb['genres']):
@@ -50,7 +50,7 @@ for title, genre in zip(genre_imdb['originalTitle'], genre_imdb['genres']):
     # - Netflix_Rating: Rated By Netflix.
     # - IMDB_Rating: Rated By IMDB.
     # - Netflix: Currently Streaming on Netflix or Not.
-trending = pd.read_csv("trending.csv")
+trending = pd.read_csv("datasets/trending.csv")
 trending_years_preCorona = []
 trending_years2020 = []
 # ======================================================================================================================
@@ -64,7 +64,7 @@ for title in all_title:
         genres.append('-')
 
 columns = {"Title": all_title,
-            "Year": year,
+            "Year": years,
             "Genre": genres,
             "Type": all_type,
             "Rating": all_rating}
