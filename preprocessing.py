@@ -18,12 +18,14 @@ years = []
 all_type = []
 all_rating = []
 all_title = []
+all_added = []
 print(all.columns)
-for year, typ, title, rating in zip(all['release_year'],all['type'], all['title'], all['rating']):
+for year, typ, title, rating, added in zip(all['release_year'],all['type'], all['title'], all['rating'], all['date_added']):
     all_title.append(title)
     years.append(year)
     all_type.append(typ)
     all_rating.append(rating)
+    all_added.append(added)
 
 # ======================================================================================================================
 
@@ -64,7 +66,8 @@ for title in all_title:
         genres.append('-')
 
 columns = {"Title": all_title,
-            "Year": years,
+            "Release Year": years,
+            "Date added": all_added,
             "Genre": genres,
             "Type": all_type,
             "Rating": all_rating}
