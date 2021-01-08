@@ -61,10 +61,21 @@ for title, genre in zip(genre_imdb['originalTitle'], genre_imdb['genres']):
     # - IMDB_Rating: Rated By IMDB.
     # - Netflix: Currently Streaming on Netflix or Not.
 trending = pd.read_csv("datasets/trending.csv")
-trending_years_preCorona = []
-trending_years2020 = []
-# ======================================================================================================================
 
+trending_title = []
+trending_year = []
+trending_rating = []
+for title, year, rating in zip(trending['Titles'], trending['Year'], trending['IMDB_Rating']):
+    trending_title.append(title)
+    trending_year.append(year)
+    trending_rating.append(rating)
+# ======================================================================================================================
+trending_genres = []
+for title in trending_title:
+    if title in genre_title:
+        trending_genres.append(genre_title[title])
+    else:
+        trending_genres.append('-')
 
 genres = []
 for title in all_title:
@@ -84,9 +95,11 @@ table_frame = pd.DataFrame(columns)
 print(table_frame)
 table_frame.to_csv('/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/combined.csv', encoding='utf-8', index=False)
 
-c = 0
-for genre in genres:
-    if genre == '-':
-        c += 1
+columns = {"Title": trending_title,
+            "Year": trending_year,
+           "Genre": trending_genres,
+            "Rating": trending_rating}
 
-print(c, "out of ", len(genres), " is None")
+table_frame = pd.DataFrame(columns)
+print(table_frame)
+table_frame.to_csv('/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/trending_combined.csv', encoding='utf-8', index=False)
