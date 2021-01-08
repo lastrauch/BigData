@@ -1,4 +1,5 @@
 import pandas as pd
+import math
 
 # ======================== tv shows and movies available on Netflix as of 2019 =========================================
     # - shwo_id
@@ -25,7 +26,14 @@ for year, typ, title, rating, added in zip(all['release_year'],all['type'], all[
     years.append(year)
     all_type.append(typ)
     all_rating.append(rating)
-    all_added.append(added)
+    if pd.isnull(added):
+        all_added.append("-")
+    else:
+        if "," in str(added):
+            x = str(added).split(", ")
+            all_added.append(x[1])
+        else:
+            all_added.append(added)
 
 # ======================================================================================================================
 
@@ -82,9 +90,3 @@ for genre in genres:
         c += 1
 
 print(c, "out of ", len(genres), " is None")
-
-#print(df2.columns)
-#print(df.columns)
-#print("2019: ", len(years_2019))
-#print("2020: ", len(years_2020))
-#print(years_2020)
