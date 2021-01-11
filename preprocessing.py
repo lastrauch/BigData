@@ -17,7 +17,7 @@ years_preCorona = []
 years_2020 = []
 years = []
 all_type = []
-all_rating = []
+all_pg = []
 all_title = []
 all_added = []
 print(all.columns)
@@ -25,7 +25,7 @@ for year, typ, title, rating, added in zip(all['release_year'],all['type'], all[
     all_title.append(title)
     years.append(year)
     all_type.append(typ)
-    all_rating.append(rating)
+    all_pg.append(rating)
     if pd.isnull(added):
         all_added.append("-")
     else:
@@ -48,15 +48,17 @@ for year, typ, title, rating, added in zip(all['release_year'],all['type'], all[
     # - runtimeMinutes: Primary runtime of the title, in minutes.
     # - genres (string array): Includes up to three genres associated with the title.
 genre_imdb = pd.read_csv("datasets/genre.tsv", sep='\t')
+rating_imdb = pd.read_csv("datasets/title_ratings.tsv", sep='\t')
+
+imdb_combined = pd.concat([genre_imdb.set_index('tconst'),rating_imdb.set_index('tconst')], axis=1, join='inner')
+
 
 genre_title = {}
 adult = []
-for title, genre, isAdult in zip(genre_imdb['originalTitle'], genre_imdb['genres'], genre_imdb['isAdult']):
+ratings = {}
+for title, genre, rating in zip(imdb_combined['originalTitle'], imdb_combined['genres'], imdb_combined['averageRating']):
     genre_title[title] = genre
-    if isAdult == 0:
-        adult.append(True)
-    else:
-        adult.append(False)
+    ratings[title] = rating
 
 # ======================================================================================================================
 
@@ -131,6 +133,7 @@ for title in trending_title:
 genres = []
 originals = []
 regions = []
+rating = []
 for title in all_title:
     if title in original_title:
         originals.append(True)
@@ -138,8 +141,10 @@ for title in all_title:
     else:
         originals.append(False)
     if title in genre_title:
+        rating.append(ratings[title])
         genres.append(genre_title[title])
     else:
+        rating.append('-')
         genres.append('-')
 
 columns = {"Title": all_title,
@@ -147,8 +152,9 @@ columns = {"Title": all_title,
             "Date added": all_added,
             "Genre": genres,
             "Type": all_type,
-            "Rating": all_rating,
-            "Original": originals}
+            "PG": all_pg,
+            "Original": originals,
+            "Rating": rating}
 
 table_frame = pd.DataFrame(columns)
 print(table_frame)
@@ -156,7 +162,7 @@ table_frame.to_csv('/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/co
 
 columns2 = {"Title": trending_title,
             "Year": trending_year,
-           "Genre": trending_genres,
+            "Genre": trending_genres,
             "Rating": trending_rating}
 
 table_frame2 = pd.DataFrame(columns2)
