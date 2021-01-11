@@ -2,7 +2,7 @@ import pandas as pd
 import math
 
 # ======================== tv shows and movies available on Netflix as of 2019 =========================================
-    # - shwo_id
+    # - show_id
     # - type
     # - title
     # - director
@@ -50,8 +50,14 @@ for year, typ, title, rating, added in zip(all['release_year'],all['type'], all[
 genre_imdb = pd.read_csv("datasets/genre.tsv", sep='\t')
 
 genre_title = {}
-for title, genre in zip(genre_imdb['originalTitle'], genre_imdb['genres']):
+adult = []
+for title, genre, isAdult in zip(genre_imdb['originalTitle'], genre_imdb['genres'], genre_imdb['isAdult']):
     genre_title[title] = genre
+    if isAdult == 0:
+        adult.append(True)
+    else:
+        adult.append(False)
+
 # ======================================================================================================================
 
 # ================== collection of top 50 trending Tv shows currently streaming on Netflix =============================
@@ -70,6 +76,44 @@ for title, year, rating in zip(trending['Titles'], trending['Year'], trending['I
     trending_year.append(year)
     trending_rating.append(rating)
 # ======================================================================================================================
+
+# ===================================== Original Movies and Show created by Netflix ====================================
+    # - Title:
+    # - Genre:
+    # - Original Network:
+    # - Premiere:
+    # - Seasons:
+    # - Length:
+    # - Netflix Exclusive Regions:
+    # - Status: Abgeschlossen oder nicht.
+original = pd.read_csv("datasets/netflix_originals.csv")
+# ======================================================================================================================
+
+# =========================== A collection of tv shows found on these streaming platforms ==============================
+    # - Title:
+    # - Year: The year in which the movie was produced
+    # - Age: Target age group
+    # - IMDb: IMDb rating
+    # - Rotten Tomatoes: Rotten Tomatoes %
+    # - Netflix: Whether the movie is found on Netflix (0 or 1)
+    # - Hulu: Whether the movie is found on Hulu
+    # - Prime Video: Whether the movie is found on Prime Video
+    # - Disney+: Whether the tv show is found on Disney+
+tv_shows = pd.read_csv("datasets/all_tv_shows.csv")
+# ======================================================================================================================
+
+# ============================ A collection of movies found on these streaming platforms ===============================
+    # - Title:
+    # - Year: The year in which the movie was produced
+    # - Age: Target age group
+    # - IMDb: IMDb rating
+    # - Rotten Tomatoes: Rotten Tomatoes %
+    # - Netflix: Whether the movie is found on Netflix (0 or 1)
+    # - Hulu: Whether the movie is found on Hulu
+    # - Prime Video: Whether the movie is found on Prime Video
+movies = pd.read_csv("datasets/MoviesOnStreamingPlatforms_updated.csv")
+# ======================================================================================================================
+
 trending_genres = []
 for title in trending_title:
     if title in genre_title:
@@ -95,11 +139,11 @@ table_frame = pd.DataFrame(columns)
 print(table_frame)
 table_frame.to_csv('/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/combined.csv', encoding='utf-8', index=False)
 
-columns = {"Title": trending_title,
+columns2 = {"Title": trending_title,
             "Year": trending_year,
            "Genre": trending_genres,
             "Rating": trending_rating}
 
-table_frame = pd.DataFrame(columns)
-print(table_frame)
-table_frame.to_csv('/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/trending_combined.csv', encoding='utf-8', index=False)
+table_frame2 = pd.DataFrame(columns2)
+print(table_frame2)
+table_frame2.to_csv('/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/trending_combined.csv', encoding='utf-8', index=False)

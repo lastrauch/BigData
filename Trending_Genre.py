@@ -7,34 +7,33 @@ dataset = pd.read_csv("trending_combined.csv")
 all = []
 genres = []
 years = []
-comedy = []
-adventure = []
-animation = []
-action = []
-horror = []
-documentary = []
-crime = []
-drama = []
-romance = []
-short = []
-biography = []
-news = []
-thriller = []
-talk_show = []
-reality_tv = []
-fantasy = []
-history = []
-sci_fi = []
-mystery = []
-family = []
-western = []
-music = []
-adult = []
-musical = []
-game_show = []
-sport = []
-war = []
-other = []
+comedy = [0, 'Comedy']
+adventure = [0, 'Adventure']
+animation = [0, 'Animation']
+action = [0, 'Action']
+horror = [0, 'Horror']
+documentary = [0, 'Documentary']
+crime = [0, 'Crime']
+drama = [0, 'Drama']
+romance = [0, 'Romance']
+short = [0, 'Short']
+biography = [0, 'Biography']
+news = [0, 'News']
+thriller = [0, 'Thriller']
+talk_show = [0, 'Talk-Show']
+reality_tv = [0, 'Reality-TV']
+fantasy = [0, 'Fantasy']
+history = [0, 'History']
+sci_fi = [0, 'Sci-Fi']
+mystery = [0, 'Mystery']
+family = [0, 'Family']
+western = [0, 'Western']
+music = [0, 'Music']
+adult = [0, 'Adult']
+musical = [0, 'Musical']
+game_show = [0, 'Game-Show']
+sport = [0, 'Sport']
+war = [0, 'War']
 
 
 for genre in dataset['Genre']:
@@ -48,62 +47,6 @@ for genre in dataset['Genre']:
             genres.append(genre)
 
 print(genres)
-
-for i in range(2014, 2021):
-    comedy.append(0)
-    comedy.append("Comedy")
-    adventure.append(0)
-    adventure.append("Adventure")
-    animation.append(0)
-    animation.append("Animation")
-    action.append(0)
-    action.append("Action")
-    horror.append(0)
-    horror.append("Horror")
-    documentary.append(0)
-    documentary.append("Documentary")
-    crime.append(0)
-    crime.append("Crime")
-    drama.append(0)
-    drama.append("Drama")
-    romance.append(0)
-    romance.append("Romance")
-    short.append(0)
-    short.append("Short")
-    biography.append(0)
-    biography.append("Biography")
-    news.append(0)
-    news.append("News")
-    thriller.append(0)
-    thriller.append("Thriller")
-    talk_show.append(0)
-    talk_show.append("Talk-Show")
-    reality_tv.append(0)
-    reality_tv.append("Reality-TV")
-    fantasy.append(0)
-    fantasy.append("Fantasy")
-    history.append(0)
-    history.append("History")
-    sci_fi.append(0)
-    sci_fi.append("Sci-Fi")
-    mystery.append(0)
-    mystery.append("Mystery")
-    family.append(0)
-    family.append("Family")
-    western.append(0)
-    western.append("Western")
-    music.append(0)
-    music.append("Music")
-    adult.append(0)
-    adult.append("Adult")
-    musical.append(0)
-    musical.append("Musical")
-    game_show.append(0)
-    game_show.append("Game-Show")
-    sport.append(0)
-    sport.append("Sport")
-    war.append(0)
-    war.append("War")
 
 for genre in dataset['Genre']:
     if "Comedy" in genre:
