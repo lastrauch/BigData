@@ -20,7 +20,6 @@ all_type = []
 all_pg = []
 all_title = []
 all_added = []
-print(all.columns)
 for year, typ, title, rating, added in zip(all['release_year'],all['type'], all['title'], all['rating'], all['date_added']):
     all_title.append(title)
     years.append(year)
@@ -47,14 +46,16 @@ for year, typ, title, rating, added in zip(all['release_year'],all['type'], all[
     # - endYear (YYYY): TV Series end year. for all other title types.
     # - runtimeMinutes: Primary runtime of the title, in minutes.
     # - genres (string array): Includes up to three genres associated with the title.
+    # - averageRating: weighted average of all the individual user ratings.
+
 genre_imdb = pd.read_csv("datasets/genre.tsv", sep='\t')
 rating_imdb = pd.read_csv("datasets/title_ratings.tsv", sep='\t')
 
+#join 'genre.tsv' and 'title_ratings.tsv' at column 'tconst'
 imdb_combined = pd.concat([genre_imdb.set_index('tconst'),rating_imdb.set_index('tconst')], axis=1, join='inner')
 
 
 genre_title = {}
-adult = []
 ratings = {}
 for title, genre, rating in zip(imdb_combined['originalTitle'], imdb_combined['genres'], imdb_combined['averageRating']):
     genre_title[title] = genre
@@ -109,6 +110,22 @@ for title, region in zip(original['Title'], original['Netflix Exclusive Regions'
     # - Prime Video: Whether the movie is found on Prime Video
     # - Disney+: Whether the tv show is found on Disney+
 tv_shows = pd.read_csv("datasets/all_tv_shows.csv")
+
+netflixs = {}
+hulus = {}
+primes = {}
+disneys = {}
+plattforms = [netflixs, hulus, primes, disneys]
+for title, netflix, hulu, prime, disney in zip(tv_shows['Title'], tv_shows['Netflix'], tv_shows['Hulu'], tv_shows['Prime Video'], tv_shows['Disney+']):
+    if netflix == 1:
+        netflixs[title] = "Netflix"
+    if hulu == 1:
+        hulus[title] = "Hulu"
+    if prime == 1:
+        primes[title] = "Prime"
+    if disney == 1:
+        disneys[title] = "Disney+"
+
 # ======================================================================================================================
 
 # ============================ A collection of movies found on these streaming platforms ===============================
@@ -134,6 +151,7 @@ genres = []
 originals = []
 regions = []
 rating = []
+plattform = []
 for title in all_title:
     if title in original_title:
         originals.append(True)
@@ -146,6 +164,20 @@ for title in all_title:
     else:
         rating.append('-')
         genres.append('-')
+    if title in netflixs:
+        plattform.append(netflixs[title])
+    elif title in hulus:
+        plattform.append(hulus[title])
+    elif title in primes:
+        plattform.append(primes[title])
+    elif title in disneys:
+        plattform.append(disneys[title])
+    else:
+        plattform.append("-")
+
+print(len(plattform))
+print(len(genres))
+
 
 columns = {"Title": all_title,
             "Release Year": years,
@@ -154,10 +186,10 @@ columns = {"Title": all_title,
             "Type": all_type,
             "PG": all_pg,
             "Original": originals,
-            "Rating": rating}
+            "Rating": rating,
+            "Platform": plattform}
 
 table_frame = pd.DataFrame(columns)
-print(table_frame)
 table_frame.to_csv('/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/combined.csv', encoding='utf-8', index=False)
 
 columns2 = {"Title": trending_title,
@@ -166,5 +198,4 @@ columns2 = {"Title": trending_title,
             "Rating": trending_rating}
 
 table_frame2 = pd.DataFrame(columns2)
-print(table_frame2)
 table_frame2.to_csv('/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/trending_combined.csv', encoding='utf-8', index=False)
