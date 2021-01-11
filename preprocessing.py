@@ -86,7 +86,14 @@ for title, year, rating in zip(trending['Titles'], trending['Year'], trending['I
     # - Length:
     # - Netflix Exclusive Regions:
     # - Status: Abgeschlossen oder nicht.
+original_title = []
+original_region = []
+test = {}
 original = pd.read_csv("datasets/netflix_originals.csv")
+for title, region in zip(original['Title'], original['Netflix Exclusive Regions']):
+    test[title] = region
+    original_title.append(title)
+    original_region.append(region)
 # ======================================================================================================================
 
 # =========================== A collection of tv shows found on these streaming platforms ==============================
@@ -122,7 +129,14 @@ for title in trending_title:
         trending_genres.append('-')
 
 genres = []
+originals = []
+regions = []
 for title in all_title:
+    if title in original_title:
+        originals.append(True)
+        regions.append(test[title])
+    else:
+        originals.append(False)
     if title in genre_title:
         genres.append(genre_title[title])
     else:
@@ -133,7 +147,8 @@ columns = {"Title": all_title,
             "Date added": all_added,
             "Genre": genres,
             "Type": all_type,
-            "Rating": all_rating}
+            "Rating": all_rating,
+            "Original": originals}
 
 table_frame = pd.DataFrame(columns)
 print(table_frame)
