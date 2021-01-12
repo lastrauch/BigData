@@ -39,7 +39,7 @@ rating_imdb.drop(columns=['numVotes'], inplace=True)
 imdb_combined = pd.merge(genre_imdb, rating_imdb, on='tconst', how='left')
 
 imdb_combined = imdb_combined[imdb_combined.titleType != 'tvEpisode']
-imdb_combined.to_csv('test.csv', encoding='utf-8', index=False)
+
 imdb_combined.drop(columns=['tconst', 'titleType'], inplace=True)
 imdb_combined.columns = ['Title', 'Genres', 'Rating']
 
@@ -91,11 +91,11 @@ collection.append(movies)
 collection.drop(columns=['Unnamed: 0', 'Year', 'Rotten Tomatoes', 'type'], inplace=True)
 # ======================================================================================================================
 
-netflix_collection = pd.merge(netflix_shows, collection, on='Title', how='outer', indicator=True)
-netflix_collection_imdb = pd.merge(netflix_collection, imdb_combined, on='Title', how='left', indicator=True)
-netflix_collection_imdb_originals = pd.merge(netflix_collection_imdb, original_netflix, on='Title', how='left', indicator=True)
-netflix_collection_imdb_originals.to_csv('all_netflix_imdb_combined.csv', encoding='utf-8', index=False)
+netflix_collection = pd.merge(netflix_shows, collection, on='Title', how='outer')
+netflix_collection_imdb = pd.merge(netflix_collection, imdb_combined, on='Title', how='left')
+netflix_collection_imdb_originals = pd.merge(netflix_collection_imdb, original_netflix, on='Title', how='left')
+netflix_collection_imdb_originals.to_csv('datasets/all_netflix_imdb_combined.csv', encoding='utf-8', index=False)
 
-trending_netflix = pd.merge(trending, netflix_shows, on='Title', how='left', indicator=True)
-trending_netflix_imdb = pd.merge(trending_netflix, imdb_combined, on='Title', how='left', indicator=True)
-trending_netflix_imdb.to_csv('trending_netflix_imdb_combined.csv', encoding='utf-8', index=False)
+trending_netflix = pd.merge(trending, netflix_shows, on='Title', how='left')
+trending_netflix_imdb = pd.merge(trending_netflix, imdb_combined, on='Title', how='left')
+trending_netflix_imdb.to_csv('datasets/trending_netflix_imdb_combined.csv', encoding='utf-8', index=False)

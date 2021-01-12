@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-dataset = pd.read_csv("combined.csv")
+dataset = pd.read_csv("all_netflix_imdb_combined_preprocessed.csv")
 
 # ============================= Definiere Dictionaries und Listen zur leichteren Bearbeitung ===========================
 all = []

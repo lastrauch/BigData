@@ -5,13 +5,13 @@ platform = []
 
 def preprocess_release_year(df):
     year = []
-    for added in df['date_added']:
+    for added in df['Date Added']:
         if "," in str(added):
             x = str(added).split(", ")
             year.append(x[1])
         else:
             year.append(added)
-    df['date_added'] = year
+    df['Date Added'] = year
 
 
 def fillNa1(df):
@@ -31,8 +31,8 @@ def to_csv(df, output):
 
 
 if __name__ == '__main__':
-    dataset1 = pd.read_csv("all_netflix_imdb_combined.csv")
-    dataset2 = pd.read_csv("trending_netflix_imdb_combined.csv")
+    dataset1 = pd.read_csv("datasets/all_netflix_imdb_combined.csv")
+    dataset2 = pd.read_csv("datasets/trending_netflix_imdb_combined.csv")
     fillNa1(dataset1)
     fillNa2(dataset2)
     preprocess_release_year(dataset1)
