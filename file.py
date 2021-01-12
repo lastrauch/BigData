@@ -83,7 +83,7 @@ for i in range(2014, 2021):
 
 # ============================ Zähle wie oft ein Genre im Jahr hinzugefügt wurde =======================================
 
-for year_mixed, genre in zip(dataset['Date added'], dataset['Genre']):
+for year_mixed, genre in zip(dataset['Date Added'], dataset['Genre']):
     if year_mixed != '-' and int(year_mixed) >= 2014:
         year = int(year_mixed)
         if "Comedy" in genre:
@@ -177,7 +177,7 @@ all.append(war)
 # -Plotte die Dictionaries
 
 for dict, genre in zip(all, genres):
-    if max(dict.values()) < 50:
+    if max(dict.values()) < 200:
         for year, value in dict.items():
             other[year] += value
         continue

@@ -1,341 +1,64 @@
-Title,Type,Date Added,Genres,Rating,_merge
-Breaking Bad,TV Show,2013,"Crime,Drama,Thriller",9.5,both
-Game of Thrones,-,-,"Action,Adventure,Drama",9.4,both
-Game of Thrones,-,-,"Action,Adventure,Fantasy",7.9,both
-Rick and Morty,-,-,"Adventure,Animation,Comedy",9.3,both
-Dark,TV Show,2019,Drama,5.7,both
-Dark,TV Show,2019,"Fantasy,Horror,Thriller",6.3,both
-Dark,TV Show,2019,Horror,-,both
-Dark,TV Show,2019,"Drama,Thriller",7.7,both
-Dark,TV Show,2019,"Adult,Animation",-,both
-Dark,TV Show,2019,"Drama,Thriller",3.5,both
-Dark,TV Show,2019,"Mystery,Sci-Fi,Short",-,both
-Dark,TV Show,2019,"Horror,Short",-,both
-Dark,TV Show,2019,"Documentary,Short",-,both
-Dark,TV Show,2019,"Horror,Short",4.0,both
-Dark,TV Show,2019,"Crime,Drama,Mystery",8.7,both
-Dark,TV Show,2019,"Crime,Drama,Horror",-,both
-Dark,TV Show,2019,Horror,-,both
-Dark,TV Show,2019,Drama,-,both
-Stranger Things,TV Show,2019,Sci-Fi,8.6,both
-Stranger Things,TV Show,2019,Drama,6.8,both
-Stranger Things,TV Show,2019,"Drama,Short",8.2,both
-Stranger Things,TV Show,2019,"Comedy,Drama,Mystery",-,both
-Stranger Things,TV Show,2019,"Drama,Fantasy,Horror",8.8,both
-Avatar: The Last Airbender,-,-,"Action,Adventure,Animation",9.2,both
-Avatar: The Last Airbender,-,-,"Action,Adventure,Fantasy",8.4,both
-Avatar: The Last Airbender,-,-,"Action,Adventure,Fantasy",-,both
-Sherlock,TV Show,2017,"Action,Adventure,Crime",6.0,both
-Sherlock,TV Show,2017,"Adventure,Mystery",6.8,both
-Sherlock,TV Show,2017,Crime,-,both
-Sherlock,TV Show,2017,"Crime,Drama,Mystery",9.1,both
-Chernobyl,-,-,\N,7.1,both
-Chernobyl,-,-,"Adventure,Comedy,Horror",8.0,both
-Chernobyl,-,-,"Documentary,History",7.7,both
-Chernobyl,-,-,"Drama,Short",-,both
-Chernobyl,-,-,"Drama,History,Thriller",9.5,both
-Friends,TV Show,-,"Romance,Short,Western",5.6,both
-Friends,TV Show,-,"Drama,Romance",6.6,both
-Friends,TV Show,-,"Comedy,Drama",7.2,both
-Friends,TV Show,-,"Comedy,Drama",5.9,both
-Friends,TV Show,-,Drama,6.0,both
-Friends,TV Show,-,"Comedy,Romance",8.9,both
-Friends,TV Show,-,"Comedy,Drama",7.5,both
-Friends,TV Show,-,"Comedy,Drama,Romance",7.5,both
-Friends,TV Show,-,Romance,7.8,both
-Friends,TV Show,-,\N,7.4,both
-Friends,TV Show,-,"Drama,Short",-,both
-Friends,TV Show,-,"Horror,Short,Thriller",-,both
-Friends,TV Show,-,Drama,-,both
-Friends,TV Show,-,"Fantasy,Short",-,both
-Friends,TV Show,-,"Comedy,Drama,Short",-,both
-Friends,TV Show,-,"Drama,Short",-,both
-Friends,TV Show,-,"Drama,Short",-,both
-Friends,TV Show,-,"Family,Short",-,both
-Friends,TV Show,-,Short,-,both
-Friends,TV Show,-,"Comedy,Short",-,both
-Friends,TV Show,-,"Drama,Family,Short",7.0,both
-Friends,TV Show,-,Short,-,both
-Friends,TV Show,-,"Drama,Short",-,both
-Friends,TV Show,-,Short,-,both
-Friends,TV Show,-,"Horror,Short,Thriller",-,both
-Friends,TV Show,-,"Drama,Family,Short",-,both
-Friends,TV Show,-,Short,2.7,both
-Friends,TV Show,-,"Animation,Family,Musical",-,both
-Friends,TV Show,-,"Drama,Short",-,both
-Friends,TV Show,-,Drama,-,both
-Friends,TV Show,-,"Comedy,Drama,Short",-,both
-Friends,TV Show,-,"Horror,Short,Thriller",7.6,both
-Friends,TV Show,-,Comedy,6.9,both
-Friends,TV Show,-,"Drama,Family,Short",-,both
-Friends,TV Show,-,Short,-,both
-Friends,TV Show,-,"Comedy,Short",-,both
-Friends,TV Show,-,"Drama,Short",-,both
-Friends,TV Show,-,Drama,-,both
-Friends,TV Show,-,"Drama,Family,Music",-,both
-Friends,TV Show,-,"Drama,Short",-,both
-Friends,TV Show,-,"Comedy,Short",-,both
-Friends,TV Show,-,"Comedy,Short",-,both
-Friends,TV Show,-,"Horror,Short",-,both
-The Office,-,-,Comedy,7.8,both
-The Office,-,-,Comedy,5.9,both
-The Office,-,-,"Comedy,Drama",8.5,both
-The Office,-,-,Comedy,8.8,both
-The Office,-,-,"Comedy,Documentary,Drama",-,both
-The Office,-,-,Comedy,6.0,both
-The Office,-,-,"Comedy,Short",-,both
-The Office,-,-,"Comedy,Short",-,both
-The Office,-,-,"Fantasy,Short",-,both
-The Office,-,-,"Comedy,Short",-,both
-The Office,-,-,"Drama,Short",-,both
-The Office,-,-,Comedy,6.4,both
-The Office,-,-,Short,-,both
-Better Call Saul,TV Show,2018,"Crime,Drama",8.7,both
-The Wire,-,-,"Crime,Drama,Thriller",9.3,both
-The Wire,-,-,News,8.7,both
-The Wire,-,-,"Action,Comedy,Crime",8.7,both
-The Wire,-,-,"Sci-Fi,Short",-,both
-Supernatural,TV Show,2019,"Horror,Mystery,Thriller",6.3,both
-Supernatural,TV Show,2019,"Action,Adventure,Drama",8.4,both
-Supernatural,TV Show,2019,Horror,7.0,both
-Supernatural,TV Show,2019,"Drama,Fantasy,Horror",8.4,both
-Supernatural,TV Show,2019,Short,6.4,both
-Supernatural,TV Show,2019,"Adult,Drama,Horror",6.1,both
-Supernatural,TV Show,2019,"Adult,Short",-,both
-Supernatural,TV Show,2019,Adult,-,both
-Supernatural,TV Show,2019,"Documentary,Short",-,both
-Supernatural,TV Show,2019,\N,-,both
-Supernatural,TV Show,2019,Short,-,both
-Supernatural,TV Show,2019,"Fantasy,Short",-,both
-Supernatural,TV Show,2019,Fantasy,-,both
-Fargo,-,-,"Action,Adventure,Western",6.9,both
-Fargo,-,-,"Crime,Drama,Thriller",8.1,both
-Fargo,-,-,"Crime,Drama",7.0,both
-Fargo,-,-,"Crime,Drama,Thriller",8.9,both
-Black Mirror,TV Show,2019,Drama,7.0,both
-Black Mirror,TV Show,2019,"Music,Short",-,both
-Black Mirror,TV Show,2019,"Drama,Sci-Fi,Thriller",8.8,both
-Black Mirror,TV Show,2019,Short,6.0,both
-Black Mirror,TV Show,2019,"Drama,Romance,Short",8.4,both
-Black Mirror,TV Show,2019,"Documentary,Short",8.8,both
-Black Mirror,TV Show,2019,"Adventure,Crime,Horror",6.2,both
-Band of Brothers,-,-,"Action,Drama,History",9.5,both
-Band of Brothers,-,-,"Comedy,Music,Reality-TV",7.7,both
-Attack on Titan,TV Show,2019,"Action,Drama,Fantasy",-,both
-House,-,-,"Comedy,Fantasy,Horror",6.2,both
-House,-,-,"Comedy,Drama",7.1,both
-House,-,-,Short,6.5,both
-House,-,-,Horror,4.6,both
-House,-,-,"Animation,Drama,Family",6.2,both
-House,-,-,"Drama,Mystery,Short",-,both
-House,-,-,"Documentary,Short",-,both
-House,-,-,Short,5.7,both
-House,-,-,"Documentary,Short",-,both
-House,-,-,Documentary,-,both
-Money Heist,-,-,-,-,left_only
-Peaky Blinders,TV Show,2019,"Crime,Drama",8.8,both
-Mr. Robot,-,-,"Crime,Drama,Thriller",8.5,both
-Vikings,-,-,Short,6.8,both
-Vikings,-,-,"Action,Adventure,Drama",8.6,both
-Vikings,-,-,Documentary,7.8,both
-Vikings,-,-,"Adventure,Fantasy,Mystery",-,both
-The Sopranos,-,-,"Crime,Drama",9.2,both
-The Simpsons,-,-,"Animation,Comedy",8.7,both
-The Simpsons,-,-,"Action,Comedy,Fantasy",8.5,both
-The Mandalorian,-,-,"Action,Adventure,Sci-Fi",9.1,both
-Lost,-,-,"Crime,Mystery,Thriller",6.4,both
-Lost,-,-,"Adventure,Drama,Family",5.4,both
-Lost,-,-,Short,5.3,both
-Lost,-,-,\N,-,both
-Lost,-,-,Short,6.5,both
-Lost,-,-,Comedy,-,both
-Lost,-,-,"Game-Show,Reality-TV",7.3,both
-Lost,-,-,Short,-,both
-Lost,-,-,Short,7.1,both
-Lost,-,-,"Drama,Mystery,Short",5.8,both
-Lost,-,-,"Drama,Short",8.1,both
-Lost,-,-,"Drama,Short",6.7,both
-Lost,-,-,"Action,Adventure,Thriller",5.9,both
-Lost,-,-,"Adventure,Drama,Fantasy",8.3,both
-Lost,-,-,Documentary,-,both
-Lost,-,-,"Drama,Short",5.9,both
-Lost,-,-,"Adventure,Game-Show,Reality-TV",8.0,both
-Lost,-,-,"Horror,Short",7.5,both
-Lost,-,-,"Drama,Short",7.3,both
-Lost,-,-,Adult,-,both
-Lost,-,-,"Fantasy,Short",-,both
-Lost,-,-,"Romance,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,Short,-,both
-Lost,-,-,"Adventure,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,Adult,-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,Adult,7.3,both
-Lost,-,-,"Drama,Short,Thriller",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Adventure,Fantasy,Short",-,both
-Lost,-,-,Short,-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,Short,-,both
-Lost,-,-,"Comedy,Short",-,both
-Lost,-,-,"Crime,Documentary,Short",-,both
-Lost,-,-,"Drama,Horror,Short",-,both
-Lost,-,-,"Adventure,Comedy,Documentary",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Mystery,Thriller",-,both
-Lost,-,-,Drama,-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,Short,-,both
-Lost,-,-,"Biography,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Animation,Sci-Fi,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Drama,Short",7.2,both
-Lost,-,-,Short,-,both
-Lost,-,-,"Adventure,Biography",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Short,War",5.6,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,Thriller,7.4,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Music,Short",-,both
-Lost,-,-,"Drama,Short",3.7,both
-Lost,-,-,"Animation,Sci-Fi,Short",-,both
-Lost,-,-,"Mystery,Thriller",-,both
-Lost,-,-,"Drama,Romance",-,both
-Lost,-,-,"Adventure,Drama,Thriller",-,both
-Lost,-,-,"Adventure,Short",-,both
-Lost,-,-,Short,-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Short,Thriller",-,both
-Lost,-,-,Drama,4.2,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Documentary,Short",-,both
-Lost,-,-,"Music,Short",-,both
-Lost,-,-,"Horror,Short,Thriller",-,both
-Lost,-,-,Mystery,-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Animation,Short",-,both
-Lost,-,-,Drama,-,both
-Lost,-,-,"Short,Thriller",-,both
-Lost,-,-,"Music,Short",-,both
-Lost,-,-,"Mystery,Short",-,both
-Lost,-,-,Short,-,both
-Lost,-,-,"Adventure,Short",-,both
-Lost,-,-,Drama,-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Adventure,Documentary,Drama",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,Thriller,-,both
-Lost,-,-,"Documentary,Short",-,both
-Lost,-,-,Drama,-,both
-Lost,-,-,"Adventure,Drama,Mystery",-,both
-Lost,-,-,"Comedy,Short",-,both
-Lost,-,-,Short,-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Romance,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Musical,Short",-,both
-Lost,-,-,"Action,Drama,Short",-,both
-Lost,-,-,"Drama,Short",-,both
-Lost,-,-,"Documentary,Short",-,both
-Lost,-,-,Short,-,both
-Lost,-,-,Short,-,both
-Lost,-,-,"Drama,Short",-,both
-Westworld,-,-,"Action,Sci-Fi,Thriller",7.0,both
-Westworld,-,-,"Drama,Mystery,Sci-Fi",8.8,both
-The Umbrella Academy,TV Show,2019,"Action,Adventure,Comedy",8.0,both
-Narcos,TV Show,2017,Drama,6.7,both
-Narcos,TV Show,2017,"Drama,Short",9.3,both
-Narcos,TV Show,2017,"Biography,Crime,Drama",8.8,both
-True Detective,-,-,"Crime,Drama,Mystery",9.0,both
-Marvel's Daredevil,TV Show,2018,-,-,left_only
-Brooklyn Nine-Nine,-,-,"Comedy,Crime",8.4,both
-The Walking Dead,TV Show,2019,"Crime,Horror,Sci-Fi",6.7,both
-The Walking Dead,TV Show,2019,"Drama,War",4.8,both
-The Walking Dead,TV Show,2019,"Drama,Horror,Thriller",8.3,both
-Parks and Recreation,TV Show,2016,Comedy,8.6,both
-Parks and Recreation,TV Show,2016,"Music,Short",-,both
-Mindhunter,-,-,Documentary,7.7,both
-Mindhunter,-,-,"Crime,Drama,Thriller",8.6,both
-South Park,-,-,"Animation,Comedy",8.7,both
-South Park,-,-,"Action,Animation,Comedy",6.5,both
-Suits,TV Show,2019,Comedy,4.2,both
-Suits,TV Show,2019,"Comedy,Drama",8.5,both
-Suits,TV Show,2019,"Documentary,History,News",7.9,both
-Suits,TV Show,2019,"Action,Adventure,Comedy",-,both
-Hannibal,-,-,\N,5.1,both
-Hannibal,-,-,"Crime,Drama,Thriller",6.8,both
-Hannibal,-,-,"Action,Biography,Drama",6.8,both
-Hannibal,-,-,"Crime,Drama,Horror",8.5,both
-Hannibal,-,-,\N,-,both
-Dexter,TV Show,2018,"Adventure,Drama,Short",7.2,both
-Dexter,TV Show,2018,"Crime,Drama,Mystery",8.7,both
-Community,-,-,Comedy,8.5,both
-Community,-,-,"Documentary,Short",-,both
-Community,-,-,Horror,4.3,both
-Community,-,-,"Drama,Short",-,both
-Community,-,-,"Documentary,Short",-,both
-Community,-,-,"Drama,Short,Thriller",-,both
-Community,-,-,\N,-,both
-Community,-,-,"Drama,Family,Short",-,both
-Fringe,-,-,"Drama,Mystery,Sci-Fi",8.4,both
-Fringe,-,-,Short,7.5,both
-Fringe,-,-,"Comedy,Drama,Short",7.2,both
-Fringe,-,-,Drama,-,both
-Modern Family,-,-,"Comedy,Drama,Romance",8.4,both
-Modern Family,-,-,Short,-,both
-The Big Bang Theory,-,-,"Comedy,Romance",8.1,both
-The Big Bang Theory,-,-,"Drama,Short,Thriller",7.8,both
-Firefly,-,-,"Adventure,Drama,Sci-Fi",9.0,both
-Firefly,-,-,"Drama,Short",-,both
-Firefly,-,-,"Drama,Sci-Fi",7.4,both
-Firefly,-,-,"Drama,Mystery,Romance",-,both
-Firefly,-,-,"Comedy,Drama,Short",-,both
-Firefly,-,-,"Action,Comedy",7.6,both
-Firefly,-,-,"Drama,Short",7.7,both
-Firefly,-,-,Short,-,both
-Firefly,-,-,"Animation,Family,Fantasy",-,both
-Firefly,-,-,"Fantasy,Short",-,both
-Firefly,-,-,"Drama,Family,Short",-,both
-Firefly,-,-,"Drama,Short",-,both
-Firefly,-,-,"Fantasy,Mystery,Short",-,both
-Firefly,-,-,Short,-,both
-Firefly,-,-,"Drama,Short",-,both
-Mad Men,TV Show,2015,Drama,8.6,both
-Fullmetal Alchemist: Brotherhood,TV Show,2018,-,-,left_only
-Ozark,TV Show,2018,"Crime,Drama,Thriller",8.3,both
-The Witcher,TV Show,2019,"Action,Adventure,Drama",-,both
-The Witcher,TV Show,2019,"Biography,Documentary,Drama",5.0,both
-The Witcher,TV Show,2019,"Fantasy,Short",5.2,both
-Lucifer,TV Show,2019,\N,-,both
-Lucifer,TV Show,2019,Horror,3.7,both
-Lucifer,TV Show,2019,Drama,-,both
-Lucifer,TV Show,2019,Drama,-,both
-Lucifer,TV Show,2019,Short,-,both
-Lucifer,TV Show,2019,"Adventure,Short",5.7,both
-Lucifer,TV Show,2019,Fantasy,-,both
-Lucifer,TV Show,2019,Short,-,both
-Lucifer,TV Show,2019,"Action,Drama,Short",5.2,both
-Lucifer,TV Show,2019,"Crime,Drama,Fantasy",8.2,both
-Lucifer,TV Show,2019,Drama,6.7,both
-Lucifer,TV Show,2019,"Drama,Sci-Fi,Short",-,both
-Lucifer,TV Show,2019,"Horror,Short,Thriller",6.5,both
-Lucifer,TV Show,2019,Horror,-,both
-Lucifer,TV Show,2019,Horror,6.6,both
-Lucifer,TV Show,2019,"Horror,Thriller",6.8,both
-Lucifer,TV Show,2019,"Drama,Short",-,both
-Lucifer,TV Show,2019,"Short,Thriller",-,both
-Lucifer,TV Show,2019,"Action,Crime,Drama",7.5,both
-Lucifer,TV Show,2019,"Comedy,Short",-,both
-Lucifer,TV Show,2019,"Comedy,Short",-,both
-It's Always Sunny in Philadelphia,-,-,Comedy,8.8,both
+Title,Date Added,Type,Genre,Rating
+Breaking Bad,2013,tvSeries,"Crime,Drama,Thriller",9.5
+Game of Thrones,-,tvSeries,"Action,Adventure,Drama",9.4
+Rick and Morty,-,tvSeries,"Adventure,Animation,Comedy",9.3
+Dark,2019,tvSeries,"Crime,Drama,Mystery",8.7
+Stranger Things,2019,tvSeries,Sci-Fi,8.6
+Stranger Things,2019,tvSeries,"Drama,Fantasy,Horror",8.8
+Avatar: The Last Airbender,-,tvSeries,"Action,Adventure,Animation",9.2
+Avatar: The Last Airbender,-,tvSeries,"Action,Adventure,Fantasy",-
+Sherlock,2017,tvSeries,Crime,-
+Sherlock,2017,tvSeries,"Crime,Drama,Mystery",9.1
+Chernobyl,-,-,-,-
+Friends,-,tvSeries,"Comedy,Drama",7.2
+Friends,-,tvSeries,"Comedy,Romance",8.9
+Friends,-,tvSeries,Romance,7.8
+The Office,-,tvSeries,Comedy,7.8
+The Office,-,tvSeries,"Comedy,Drama",8.5
+The Office,-,tvSeries,Comedy,8.8
+The Office,-,tvSeries,Comedy,6.0
+The Office,-,tvSeries,Comedy,6.4
+Better Call Saul,2018,tvSeries,"Crime,Drama",8.7
+The Wire,-,tvSeries,"Crime,Drama,Thriller",9.3
+The Wire,-,tvSeries,News,8.7
+Supernatural,2019,tvSeries,"Drama,Fantasy,Horror",8.4
+Fargo,-,tvSeries,"Crime,Drama,Thriller",8.9
+Black Mirror,2019,tvSeries,"Drama,Sci-Fi,Thriller",8.8
+Band of Brothers,-,tvSeries,"Comedy,Music,Reality-TV",7.7
+Attack on Titan,2019,-,-,-
+House,-,-,-,-
+Money Heist,-,-,-,-
+Peaky Blinders,2019,tvSeries,"Crime,Drama",8.8
+Mr. Robot,-,tvSeries,"Crime,Drama,Thriller",8.5
+Vikings,-,tvSeries,"Action,Adventure,Drama",8.6
+The Sopranos,-,tvSeries,"Crime,Drama",9.2
+The Simpsons,-,tvSeries,"Animation,Comedy",8.7
+The Mandalorian,-,tvSeries,"Action,Adventure,Sci-Fi",9.1
+Lost,-,tvSeries,"Game-Show,Reality-TV",7.3
+Lost,-,tvSeries,"Adventure,Drama,Fantasy",8.3
+Lost,-,tvSeries,"Adventure,Game-Show,Reality-TV",8.0
+Westworld,-,tvSeries,"Drama,Mystery,Sci-Fi",8.8
+The Umbrella Academy,2019,tvSeries,"Action,Adventure,Comedy",8.0
+Narcos,2017,tvSeries,"Biography,Crime,Drama",8.8
+True Detective,-,tvSeries,"Crime,Drama,Mystery",9.0
+Marvel's Daredevil,2018,-,-,-
+Brooklyn Nine-Nine,-,tvSeries,"Comedy,Crime",8.4
+The Walking Dead,2019,tvSeries,"Drama,Horror,Thriller",8.3
+Parks and Recreation,2016,tvSeries,Comedy,8.6
+Mindhunter,-,tvSeries,"Crime,Drama,Thriller",8.6
+South Park,-,tvSeries,"Animation,Comedy",8.7
+Suits,2019,tvSeries,"Comedy,Drama",8.5
+Hannibal,-,tvSeries,"Crime,Drama,Horror",8.5
+Dexter,2018,tvSeries,"Crime,Drama,Mystery",8.7
+Community,-,tvSeries,Comedy,8.5
+Community,-,tvSeries,\N,-
+Fringe,-,tvSeries,"Drama,Mystery,Sci-Fi",8.4
+Modern Family,-,tvSeries,"Comedy,Drama,Romance",8.4
+The Big Bang Theory,-,tvSeries,"Comedy,Romance",8.1
+Firefly,-,tvSeries,"Adventure,Drama,Sci-Fi",9.0
+Mad Men,2015,tvSeries,Drama,8.6
+Fullmetal Alchemist: Brotherhood,2018,-,-,-
+Ozark,2018,tvSeries,"Crime,Drama,Thriller",8.3
+The Witcher,2019,tvSeries,"Action,Adventure,Drama",-
+Lucifer,2019,tvSeries,"Crime,Drama,Fantasy",8.2
+It's Always Sunny in Philadelphia,-,tvSeries,Comedy,8.8

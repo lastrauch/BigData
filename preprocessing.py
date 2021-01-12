@@ -31,12 +31,12 @@ def to_csv(df, output):
 
 
 if __name__ == '__main__':
-    dataset1 = pd.read_csv("datasets/all_netflix_imdb_combined.csv")
+    dataset1 = pd.read_csv("datasets/netflix_imdb_combined.csv")
     dataset2 = pd.read_csv("datasets/trending_netflix_imdb_combined.csv")
     fillNa1(dataset1)
     fillNa2(dataset2)
     preprocess_release_year(dataset1)
     preprocess_release_year(dataset2)
-    to_csv(dataset1, 'all_netflix_imdb_combined_preprocessed.csv')
+    to_csv(dataset1, 'netflix_imdb_combined_preprocessed.csv')
     to_csv(dataset2, 'trending_netflix_imdb_combined_preprocessed.csv')
 

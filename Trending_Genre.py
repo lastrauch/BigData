@@ -1,39 +1,29 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-dataset = pd.read_csv("trending_combined.csv")
+dataset = pd.read_csv("trending_netflix_imdb_combined_preprocessed.csv")
 
 
 all = []
 genres = []
 years = []
-comedy = [0, 'Comedy']
-adventure = [0, 'Adventure']
-animation = [0, 'Animation']
-action = [0, 'Action']
-horror = [0, 'Horror']
-documentary = [0, 'Documentary']
 crime = [0, 'Crime']
 drama = [0, 'Drama']
-romance = [0, 'Romance']
-short = [0, 'Short']
-biography = [0, 'Biography']
-news = [0, 'News']
 thriller = [0, 'Thriller']
-talk_show = [0, 'Talk-Show']
-reality_tv = [0, 'Reality-TV']
-fantasy = [0, 'Fantasy']
-history = [0, 'History']
-sci_fi = [0, 'Sci-Fi']
+action = [0, 'Action']
+adventure = [0, 'Adventure']
+animation = [0, 'Animation']
+comedy = [0, 'Comedy']
 mystery = [0, 'Mystery']
-family = [0, 'Family']
-western = [0, 'Western']
+sci_fi = [0, 'Sci-Fi']
+fantasy = [0, 'Fantasy']
+horror = [0, 'Horror']
+romance = [0, 'Romance']
+news = [0, 'News']
 music = [0, 'Music']
-adult = [0, 'Adult']
-musical = [0, 'Musical']
+reality_tv = [0, 'Reality-TV']
 game_show = [0, 'Game-Show']
-sport = [0, 'Sport']
-war = [0, 'War']
+biography = [0, 'Biography']
 
 
 for genre in dataset['Genre']:
@@ -51,58 +41,38 @@ print(genres)
 for genre in dataset['Genre']:
     if "Comedy" in genre:
         comedy[0] += 1
-    elif "Adventure" in genre:
+    if "Adventure" in genre:
         adventure[0] += 1
-    elif "Animation" in genre:
+    if "Animation" in genre:
         animation[0] += 1
-    elif "Action" in genre:
+    if "Action" in genre:
         action[0] += 1
-    elif "Horror" in genre:
+    if "Horror" in genre:
         horror[0] += 1
-    elif "Documentary" in genre:
-        documentary[0] += 1
-    elif "Crime" in genre:
+    if "Crime" in genre:
         crime[0] += 1
-    elif "Drama" in genre:
+    if "Drama" in genre:
         drama[0] += 1
-    elif "Romance" in genre:
+    if "Romance" in genre:
         romance[0] += 1
-    elif "Short" in genre:
-        short[0] += 1
-    elif "Biography" in genre:
+    if "Biography" in genre:
         biography[0] += 1
-    elif "News" in genre:
+    if "News" in genre:
         news[0] += 1
-    elif "Thriller" in genre:
+    if "Thriller" in genre:
         thriller[0] += 1
-    elif "Talk-Show" in genre:
-        talk_show[0] += 1
-    elif "Reality-TV" in genre:
+    if "Reality-TV" in genre:
         reality_tv[0] += 1
-    elif "Fantasy" in genre:
+    if "Fantasy" in genre:
         fantasy[0] += 1
-    elif "History" in genre:
-        history[0] += 1
-    elif "Sci-Fi" in genre:
+    if "Sci-Fi" in genre:
         sci_fi[0] += 1
-    elif "Mystery" in genre:
+    if "Mystery" in genre:
         mystery[0] += 1
-    elif "Family" in genre:
-        family[0] += 1
-    elif "Western" in genre:
-        western[0] += 1
-    elif "Music" in genre:
+    if "Music" in genre:
         music[0] += 1
-    elif "Adult" in genre:
-        adult[0] += 1
-    elif "Musical" in genre:
-        musical[0] += 1
-    elif "Game-Show" in genre:
+    if "Game-Show" in genre:
         game_show[0] += 1
-    elif "Sport" in genre:
-        sport[0] += 1
-    elif "War" in genre:
-        war[0] += 1
 # ======================================================================================================================
 
 all.append(adventure)
@@ -110,34 +80,23 @@ all.append(animation)
 all.append(comedy)
 all.append(action)
 all.append(horror)
-all.append(documentary)
 all.append(crime)
 all.append(drama)
 all.append(romance)
-all.append(short)
 all.append(biography)
 all.append(news)
 all.append(thriller)
-all.append(talk_show)
 all.append(reality_tv)
 all.append(fantasy)
-all.append(history)
 all.append(sci_fi)
 all.append(mystery)
-all.append(family)
-all.append(western)
 all.append(music)
-all.append(adult)
-all.append(musical)
 all.append(game_show)
-all.append(sport)
-all.append(war)
-
 
 # ========================================= Plotting ==========================================================
 
 for list in all:
-    if list[0] > 1:
+    if list[0] > 5:
         plt.bar(list[1], list[0])
 
 # ======================================================================================================================
@@ -145,3 +104,4 @@ for list in all:
 plt.title("Anzahl beliebter Title im jeweiligen Genre", fontsize=10)
 plt.xticks(fontsize=6)
 plt.show()
+
