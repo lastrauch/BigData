@@ -7,3 +7,4 @@ The datasets can be found here:
  - Netflix Originals (netflix_originals.csv): https://www.kaggle.com/abhimanyudasarwar/netflix-originals
  - TV shows on Netflix, Prime Video, Hulu and Disney+ (all_tv_shows.csv): https://www.kaggle.com/ruchi798/tv-shows-on-netflix-prime-video-hulu-and-disney
  - Movies on Netflix, Prime Video, Hulu and Disney+ (MoviesOnStreamingPlatforms_updated.csv): https://www.kaggle.com/ruchi798/movies-on-netflix-prime-video-hulu-and-disney
+ - Market value of Netflix since 2002: https://de.finance.yahoo.com/quote/NFLX?p=NFLX&.tsrc=fin-srch
