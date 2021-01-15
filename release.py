@@ -6,7 +6,7 @@ dataset = pd.read_csv("netflix_imdb_combined_preprocessed.csv")
 
 
 #================================ Order by year by publishers===============================
-#
+
 netflix = dict()
 hulu = dict()
 prime = dict()
@@ -14,7 +14,7 @@ disney = dict()
 
 
 for year, is_netflix, is_hulu, is_prime, is_disney in zip(dataset['Date Added'], dataset['Netflix'], dataset['Hulu'], dataset['Prime Video'], dataset['Disney+']):
-    if year not in netflix.keys():
+    if year not in netflix:
         netflix[year] = 0
     if year not in hulu:
         hulu[year] = 0
@@ -35,3 +35,62 @@ print(netflix)
 print(hulu)
 print(prime)
 print(disney)
+
+#========================= Sort by publisher =============================
+
+publisher = {   "netflix" : 0,
+                "hulu":0,
+                "prime":0,
+                "disney":0
+                }
+
+for is_netflix, is_hulu, is_prime, is_disney in zip(dataset['Netflix'], dataset['Hulu'], dataset['Prime Video'], dataset['Disney+']):
+    if is_netflix == '1.0':
+        publisher["netflix"] += 1
+    if is_hulu =='1.0':
+        publisher["hulu"]+=1
+    if is_prime =='1.0':
+        publisher["prime"]+=1
+    if is_disney =='1.0':
+        publisher["disney"]+=1
+
+print(publisher)
+
+#====================== Sort by Rating ==================================
+
+netflix_rating = dict()
+hulu_rating = dict()
+prime_rating = dict()
+disney_rating = dict()
+
+#====================== Count age ========================================
+
+netflix_age = dict()
+hulu_age = dict()
+prime_age = dict()
+disney_age =dict()
+
+for age, is_netflix, is_hulu, is_prime, is_disney in zip(dataset['Age'], dataset['Netflix'], dataset['Hulu'], dataset['Prime Video'], dataset['Disney+']):
+    if age not in netflix_age:
+        netflix_age[age] = 0
+    if age not in hulu_age:
+        hulu_age[age] = 0
+    if age not in prime_age:
+        prime_age[age] = 0
+    if age not in disney_age:
+        disney_age[age] = 0
+    if is_netflix == '1.0':
+        netflix_age[age]+=1
+    if is_hulu == '1.0':
+        hulu_age[age]+=1
+    if is_prime == '1.0':
+        prime_age[age]+=1
+    if is_disney =='1.0':
+        disney_age[age]+=1
+
+print(netflix_age)
+print(hulu_age)
+print(prime_age)
+print(disney_age)
+
+df = pd.read_csv('netflix_imdb_combined_preprocessed.csv', na_values=['-'])
