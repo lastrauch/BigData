@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-dataset = pd.read_csv("../netflix_imdb_combined_preprocessed.csv")
+dataset = pd.read_csv('../datasets_pyspark/rdd_netflix_imdb_combined.csv')
 
 
 
@@ -13,7 +13,7 @@ prime = dict()
 disney = dict()
 
 
-for year, is_netflix, is_hulu, is_prime, is_disney in zip(dataset['Date Added'], dataset['Netflix'], dataset['Hulu'], dataset['Prime Video'], dataset['Disney+']):
+for year, is_netflix, is_hulu, is_prime, is_disney in zip(dataset['Date_Added'], dataset['Netflix'], dataset['Hulu'], dataset['Prime Video'], dataset['Disney+']):
     if year not in netflix:
         netflix[year] = 0
     if year not in hulu:
@@ -56,12 +56,6 @@ for is_netflix, is_hulu, is_prime, is_disney in zip(dataset['Netflix'], dataset[
 
 print(publisher)
 
-#====================== Sort by Rating ==================================
-
-netflix_rating = dict()
-hulu_rating = dict()
-prime_rating = dict()
-disney_rating = dict()
 
 #====================== Count age ========================================
 
@@ -93,4 +87,27 @@ print(hulu_age)
 print(prime_age)
 print(disney_age)
 
-df = pd.read_csv('../netflix_imdb_combined_preprocessed.csv', na_values=['-'])
+
+#====================== Sort by Rating ==================================
+
+df = pd.read_csv('../datasets_pyspark/rdd_netflix_imdb_combined.csv', na_values=['-'])
+
+netflix_rating = df.loc[df['Netflix']==1, 'Rating']
+hulu_rating = df.loc[df['Hulu']==1, 'Rating']
+prime_rating = df.loc[df['Prime Video']==1, 'Rating']
+disney_rating = df.loc[df['Disney+']==1, 'Rating']
+
+print(netflix_rating.mean())
+print(netflix_rating.var())
+print(hulu_rating.mean())
+print(hulu_rating.var())
+print(prime_rating.mean())
+print(prime_rating.var())
+print(disney_rating.mean())
+print(disney_rating.var())
+
+
+netflix_rating = dict()
+hulu_rating = dict()
+prime_rating = dict()
+disney_rating = dict()
