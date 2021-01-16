@@ -40,4 +40,13 @@ def plot_trending_genres():
     plt.tight_layout()
 
     plt.show()
-    
+
+def plot_release_platform():
+    df = pd.read_csv("/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/datasets_pyspark/release_plattform_count.csv")
+
+    df = df.drop('Jahr', 1)
+    ax = df.plot(kind = 'bar', width=0.9)
+    ax.set_xticklabels( ('2014', '2015','2016','2017','2018','2019','2020') )
+    ax.legend(labels=['Netflix', 'Prime', 'Hulu', 'Disney+'])
+
+    plt.show()
