@@ -5,6 +5,7 @@ from pyspark.sql.functions import udf
 from pyspark.sql import functions as F
 from pyspark.sql.types import ArrayType, StringType
 from pyspark.sql.functions import udf, explode, concat, col, lit
+from pyspark.sql.functions import mean as _mean, stddev as _stddev, variance as _var
 confCluster = SparkConf().setAppName("NetflixAnalysis")
 sc = SparkContext(conf=confCluster)
 sqlContext = sql.SQLContext(sc)
@@ -144,4 +145,15 @@ union = df_netflix.join(df_prime, 'Jahr', 'left')
 union = union.join(df_hulu, 'Jahr', 'left')
 union = union.join(df_disney, 'Jahr', 'left')
 union.show()
-union.toPandas().to_csv('/home/ko93jiy/BigData/Projekt/datasets/release_plattform_count.csv', encoding='utf-8', index=False)
+union.toPandas().to_csv('/home/ko93jiy/BigData/Projekt/datasets_pyspark/release_plattform_count.csv', encoding='utf-8', index=False)
+
+# ================================================================================================
+
+netflix_rating = df2.filter("Netflix == '1'").select(_mean(col('Rating')).alias('mean'), _var(col('Rating')).alias('variance')).withColumn('Platform', lit('Netflix'))
+hulu_rating = df2.filter("Hulu == '1'").select(_mean(col('Rating')).alias('mean'), _var(col('Rating')).alias('variance')).withColumn('Platform', lit('Hulu'))
+prime_rating = df2.filter(col('Prime Video') == '1').select(_mean(col('Rating')).alias('mean'), _var(col('Rating')).alias('variance')).withColumn('Platform', lit('Prime'))
+disney_rating = df2.filter(col('Disney+') == '1').select(_mean(col('Rating')).alias('mean'), _var(col('Rating')).alias('variance')).withColumn('Platform', lit('Disney+'))
+
+union = netflix_rating.union(hulu_rating).union(prime_rating).union(disney_rating)
+union.show()
+union.toPandas().to_csv('/home/ko93jiy/BigData/Projekt/datasets_pyspark/release_plattform_mean_var.csv', encoding='utf-8', index=False)
