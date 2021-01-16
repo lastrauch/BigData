@@ -12,7 +12,13 @@ def plot_gesamt_rausgekommen():
     plt.ylabel("Anzahl")
     plt.show()
 
+df3 = df2.drop('Genre', 1)
+df3 = df3.transpose()
 
-df2.plot(x="Genre", y=["Jahr_2016", "Jahr_2017", "Jahr_2018", "Jahr_2019", "Jahr_2020"], kind="bar")
+for column, genre in zip(df3, df2['Genre']):
+    ax = ax.plot(df3[column], label=genre)
 
+plt.xlabel("Jahr")
+plt.ylabel("Anzahl")
+plt.legend(fontsize=8)
 plt.show()
