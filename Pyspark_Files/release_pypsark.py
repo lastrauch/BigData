@@ -45,33 +45,33 @@ df_netflix.show()
 
 # ================================================================================================
 
-df_2014_prime = df2.filter("'Prime Video' == 1 and Date_Added == 2014").groupBy('Date_Added').count()
+df_2014_prime = df2.filter((col('Prime Video') == 1) & (col('Date_Added') == 2014)).groupBy('Date_Added').count()
 df_2014_prime = df_2014_prime.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2015_prime = df2.filter("'Prime Video' == 1 and Date_Added == 2015").groupBy('Date_Added').count()
+df_2015_prime = df2.filter((col('Prime Video') == 1) & (col('Date_Added') == 2015)).groupBy('Date_Added').count()
 df_2015_prime = df_2015_prime.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2016_prime = df2.filter("'Prime Video' == 1 and Date_Added == 2016").groupBy('Date_Added').count()
+df_2016_prime = df2.filter((col('Prime Video') == 1) & (col('Date_Added') == 2016)).groupBy('Date_Added').count()
 df_2016_prime = df_2016_prime.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2017_prime = df2.filter("'Prime Video' == 1 and Date_Added == 2017").groupBy('Date_Added').count()
+df_2017_prime = df2.filter((col('Prime Video') == 1) & (col('Date_Added') == 2017)).groupBy('Date_Added').count()
 df_2017_prime = df_2017_prime.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2018_prime = df2.filter("'Prime Video' == 1 and Date_Added == 2018").groupBy('Date_Added').count()
+df_2018_prime = df2.filter((col('Prime Video') == 1) & (col('Date_Added') == 2018)).groupBy('Date_Added').count()
 df_2018_prime = df_2018_prime.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2019_prime = df2.filter("'Prime Video' == 1 and Date_Added == 2019").groupBy('Date_Added').count()
+df_2019_prime = df2.filter((col('Prime Video') == 1) & (col('Date_Added') == 2019)).groupBy('Date_Added').count()
 df_2019_prime = df_2019_prime.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2020_prime = df2.filter("'Prime Video' == 1 and Date_Added == 2020").groupBy('Date_Added').count()
+df_2020_prime = df2.filter((col('Prime Video') == 1) & (col('Date_Added') == 2020)).groupBy('Date_Added').count()
 df_2020_prime = df_2020_prime.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_prime = df_2014_prime.union(df_2015_netflix)
-df_prime = df_prime.union(df_2016_netflix)
-df_prime = df_prime.union(df_2017_netflix)
-df_prime = df_prime.union(df_2018_netflix)
-df_prime = df_prime.union(df_2019_netflix)
-df_prime = df_prime.union(df_2020_netflix)
+df_prime = df_2014_prime.union(df_2015_prime)
+df_prime = df_prime.union(df_2016_prime)
+df_prime = df_prime.union(df_2017_prime)
+df_prime = df_prime.union(df_2018_prime)
+df_prime = df_prime.union(df_2019_prime)
+df_prime = df_prime.union(df_2020_prime)
 df_prime = df_prime.selectExpr("Jahr as Jahr", "Anzahl as Prime_Anzahl")
 df_prime.show()
 
@@ -98,46 +98,47 @@ df_2019_hulu = df_2019_hulu.selectExpr("Date_Added as Jahr", "count as Anzahl")
 df_2020_hulu = df2.filter("Hulu == 1 and Date_Added == 2020").groupBy('Date_Added').count()
 df_2020_hulu = df_2020_hulu.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_hulu = df_2014_hulu.union(df_2015_netflix)
-df_hulu = df_hulu.union(df_2016_netflix)
-df_hulu = df_hulu.union(df_2017_netflix)
-df_hulu = df_hulu.union(df_2018_netflix)
-df_hulu = df_hulu.union(df_2019_netflix)
-df_hulu = df_hulu.union(df_2020_netflix)
+df_hulu = df_2014_hulu.union(df_2015_hulu)
+df_hulu = df_hulu.union(df_2016_hulu)
+df_hulu = df_hulu.union(df_2017_hulu)
+df_hulu = df_hulu.union(df_2018_hulu)
+df_hulu = df_hulu.union(df_2019_hulu)
+df_hulu = df_hulu.union(df_2020_hulu)
 df_hulu = df_hulu.selectExpr("Jahr as Jahr", "Anzahl as Hulu_Anzahl")
 df_hulu.show()
 
 # ================================================================================================
-
-df_2014_disney = df2.filter("'Disney+' == 1 and Date_Added == 2014").groupBy('Date_Added').count()
+df_test = df2.filter((col('Disney+') == 1))
+df_test.show()
+df_2014_disney = df2.filter((col('Disney+') == 1) & (col('Date_Added') == 2014)).groupBy('Date_Added').count()
 df_2014_disney = df_2014_disney.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2015_disney = df2.filter("'Disney+' == 1 and Date_Added == 2015").groupBy('Date_Added').count()
+df_2015_disney = df2.filter((col('Disney+') == 1) & (col('Date_Added') == 2015)).groupBy('Date_Added').count()
 df_2015_disney = df_2015_disney.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2016_disney = df2.filter("'Disney+' == 1 and Date_Added == 2016").groupBy('Date_Added').count()
+df_2016_disney = df2.filter((col('Disney+') == 1) & (col('Date_Added') == 2016)).groupBy('Date_Added').count()
 df_2016_disney = df_2016_disney.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2017_disney = df2.filter("'Disney+' == 1 and Date_Added == 2017").groupBy('Date_Added').count()
+df_2017_disney = df2.filter((col('Disney+') == 1) & (col('Date_Added') == 2017)).groupBy('Date_Added').count()
 df_2017_disney = df_2017_disney.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2018_disney = df2.filter("'Disney+' == 1 and Date_Added == 2018").groupBy('Date_Added').count()
+df_2018_disney = df2.filter((col('Disney+') == 1) & (col('Date_Added') == 2018)).groupBy('Date_Added').count()
 df_2018_disney = df_2018_disney.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2019_disney = df2.filter("'Disney+' == 1 and Date_Added == 2019").groupBy('Date_Added').count()
+df_2019_disney = df2.filter((col('Disney+') == 1) & (col('Date_Added') == 2019)).groupBy('Date_Added').count()
 df_2019_disney = df_2019_disney.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_2020_disney = df2.filter("'Disney+' == 1 and Date_Added == 2020").groupBy('Date_Added').count()
+df_2020_disney = df2.filter((col('Disney+') == 1) & (col('Date_Added') == 2020)).groupBy('Date_Added').count()
 df_2020_disney = df_2020_disney.selectExpr("Date_Added as Jahr", "count as Anzahl")
 
-df_disney = df_2014_disney.union(df_2015_netflix)
-df_disney = df_disney.union(df_2016_netflix)
-df_disney = df_disney.union(df_2017_netflix)
-df_disney = df_disney.union(df_2018_netflix)
-df_disney = df_disney.union(df_2019_netflix)
-df_disney = df_disney.union(df_2020_netflix)
+df_disney = df_2014_disney.union(df_2015_disney)
+df_disney = df_disney.union(df_2016_disney)
+df_disney = df_disney.union(df_2017_disney)
+df_disney = df_disney.union(df_2018_disney)
+df_disney = df_disney.union(df_2019_disney)
+df_disney = df_disney.union(df_2020_disney)
 df_disney = df_disney.selectExpr("Jahr as Jahr", "Anzahl as Disney_Anzahl")
-df_hulu.show()
+df_disney.show()
 
 # ================================================================================================
 
