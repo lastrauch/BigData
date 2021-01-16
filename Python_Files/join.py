@@ -11,7 +11,7 @@ import pandas as pd
     # - release_year
     # - rating
     # - duration
-netflix_shows = pd.read_csv("datasets/netflix_titles.csv")
+netflix_shows = pd.read_csv("../datasets/netflix_titles.csv")
 
 netflix_shows.drop(columns=['type', 'show_id', 'director', 'cast', 'country', 'release_year', 'rating', 'duration', 'listed_in', 'description'], inplace=True)
 netflix_shows.columns = ['Title', 'Date Added']
@@ -29,10 +29,10 @@ print("Netflix_shows: ",netflix_shows.columns)
     # - runtimeMinutes: Primary runtime of the title, in minutes.
     # - genres (string array): Includes up to three genres associated with the title.
     # - averageRating: weighted average of all the individual user ratings.
-genre_imdb = pd.read_csv("datasets/genre.tsv", sep='\t')
+genre_imdb = pd.read_csv("../datasets/genre.tsv", sep='\t')
 genre_imdb.drop(columns=['primaryTitle', 'isAdult', 'startYear', 'endYear', 'runtimeMinutes'], inplace=True)
 
-rating_imdb = pd.read_csv("datasets/title_ratings.tsv", sep='\t')
+rating_imdb = pd.read_csv("../datasets/title_ratings.tsv", sep='\t')
 rating_imdb.drop(columns=['numVotes'], inplace=True)
 
 imdb_combined = pd.merge(genre_imdb, rating_imdb, on='tconst', how='left')
@@ -54,7 +54,7 @@ print("imdb: ", imdb_combined.columns)
     # - Netflix_Rating: Rated By Netflix.
     # - IMDB_Rating: Rated By IMDB.
     # - Netflix: Currently Streaming on Netflix or Not.
-trending = pd.read_csv("datasets/trending.csv")
+trending = pd.read_csv("../datasets/trending.csv")
 
 trending.drop(columns=['Year', 'Rating', 'IMDB_Rating', 'Netflix'], inplace=True)
 trending.columns = ['Title']
@@ -71,7 +71,7 @@ print("trending: ",trending.columns)
     # - Netflix Exclusive Regions:
     # - Status: Abgeschlossen oder nicht.
 original = []
-original_netflix = pd.read_csv("datasets/netflix_originals.csv")
+original_netflix = pd.read_csv("../datasets/netflix_originals.csv")
 original_netflix.drop(columns=['Genre', 'Premiere', 'Seasons', 'Length', 'Status'], inplace=True)
 print("original: ", original_netflix.columns)
 for _ in range(len(original_netflix)):
@@ -89,8 +89,8 @@ original_netflix['Original'] = original
     # - Hulu: Whether the movie is found on Hulu
     # - Prime Video: Whether the movie is found on Prime Video
     # - Disney+: Whether the tv show is found on Disney+
-series = pd.read_csv("datasets/all_tv_shows.csv")
-movies = pd.read_csv("datasets/MoviesOnStreamingPlatforms_updated.csv")
+series = pd.read_csv("../datasets/all_tv_shows.csv")
+movies = pd.read_csv("../datasets/MoviesOnStreamingPlatforms_updated.csv")
 series_and_movies = series.append(movies)
 
 series_and_movies.drop(columns=['Unnamed: 0', 'Year', 'Rotten Tomatoes', 'Type', 'type', 'ID', 'Directors', 'Genres', 'Country', 'Language', 'Runtime'], inplace=True)

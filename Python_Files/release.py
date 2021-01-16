@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-dataset = pd.read_csv("netflix_imdb_combined_preprocessed.csv")
+dataset = pd.read_csv("../netflix_imdb_combined_preprocessed.csv")
 
 
 
@@ -93,4 +93,4 @@ print(hulu_age)
 print(prime_age)
 print(disney_age)
 
-df = pd.read_csv('netflix_imdb_combined_preprocessed.csv', na_values=['-'])
+df = pd.read_csv('../netflix_imdb_combined_preprocessed.csv', na_values=['-'])
