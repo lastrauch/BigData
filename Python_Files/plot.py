@@ -16,7 +16,7 @@ df3 = df2.drop('Genre', 1)
 df3 = df3.transpose()
 
 for column, genre in zip(df3, df2['Genre']):
-    ax = ax.plot(df3[column], label=genre)
+    plt.plot(df3[column], label=genre)
 
 plt.xlabel("Jahr")
 plt.ylabel("Anzahl")
