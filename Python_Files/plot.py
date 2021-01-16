@@ -1,8 +1,13 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import cm
+import random
+import matplotlib.colors as mcolors
 
-df = pd.read_csv("/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/datasets_pyspark/combined_year_count.csv")
-df2 = pd.read_csv("/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/datasets_pyspark/combined_count.csv")
+df = pd.read_csv("../datasets_pyspark/combined_year_count.csv")
+df2 = pd.read_csv("../datasets_pyspark/combined_count.csv")
+df3 = pd.read_csv("../datasets_pyspark/trending_genre_count.csv")
 
 
 def plot_gesamt_rausgekommen():
@@ -12,13 +17,27 @@ def plot_gesamt_rausgekommen():
     plt.ylabel("Anzahl")
     plt.show()
 
-df3 = df2.drop('Genre', 1)
-df3 = df3.transpose()
+def plot_genres_year():
+    df3 = df2.drop('Genre', 1)
+    df3 = df3.transpose()
 
-for column, genre in zip(df3, df2['Genre']):
-    plt.plot(df3[column], label=genre)
+    for column, genre in zip(df3, df2['Genre']):
+        plt.plot(df3[column], label=genre)
 
-plt.xlabel("Jahr")
-plt.ylabel("Anzahl")
-plt.legend(fontsize=8)
-plt.show()
+    plt.xlabel("Jahr")
+    plt.ylabel("Anzahl")
+    plt.legend(fontsize=8)
+    plt.show()
+
+def plot_trending_genres():
+    labels=df3["Genre"]
+
+    plt.pie(df3["Anzahl"], labels=labels, autopct='%1.1f%%', startangle=90, pctdistance=0.85, colors =cs)
+    centre_circle = plt.Circle((0,0),0.70,fc='white')
+    fig = plt.gcf()
+    fig.gca().add_artist(centre_circle)
+    plt.axis('equal')
+    plt.tight_layout()
+
+    plt.show()
+    
