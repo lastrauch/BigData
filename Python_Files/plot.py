@@ -9,6 +9,8 @@ df = pd.read_csv("../datasets_pyspark/combined_year_count.csv")
 df2 = pd.read_csv("../datasets_pyspark/combined_count.csv")
 df3 = pd.read_csv("../datasets_pyspark/trending_genre_count.csv")
 df4 = pd.read_csv("../datasets_pyspark/release_plattform_mean_var.csv")
+df5 = pd.read_csv("../datasets_pyspark/original_genre.csv")
+df6 = pd.read_csv("../datasets_pyspark/union_original.csv")
 
 
 def plot_gesamt_rausgekommen():
@@ -20,11 +22,12 @@ def plot_gesamt_rausgekommen():
 
 
 def plot_genres_year():
-    df3 = df2.drop('Genre', 1)
-    df3 = df3.transpose()
+    df_3 = df2[(df2['Genre'] != '-') & (df2['Genre'] != '\\N')]
+    df_31 = df_3.drop('Genre', 1)
+    df_31 = df_31.transpose()
 
-    for column, genre in zip(df3, df2['Genre']):
-        plt.plot(df3[column], label=genre)
+    for column, genre in zip(df_31, df_3['Genre']):
+        plt.plot(df_31[column], label=genre)
 
     plt.xlabel("Jahr")
     plt.ylabel("Anzahl")
@@ -33,9 +36,10 @@ def plot_genres_year():
     plt.show()
 
 def plot_trending_genres():
-    labels=df3["Genre"]
+    df_3 = df3[(df3['Genre'] != '-') & (df3['Genre'] != '\\N')]
+    labels=df_3["Genre"]
 
-    plt.pie(df3["Anzahl"], labels=labels, autopct='%1.1f%%', startangle=90, pctdistance=0.85)
+    plt.pie(df_3["Anzahl"], labels=labels, autopct='%1.1f%%', startangle=90, pctdistance=0.85)
     centre_circle = plt.Circle((0,0),0.70,fc='white')
     fig = plt.gcf()
     fig.gca().add_artist(centre_circle)
@@ -44,6 +48,28 @@ def plot_trending_genres():
     plt.title("Genreverteilung der beliebten Serien auf Netflix 2019 ", fontsize=10)
 
     plt.show()
+
+
+def plot_original_genres():
+    df_5 = df5[(df5['Genre']!='-') & (df5['Genre']!='\\N')]
+    labels=df_5["Genre"]
+    ax = df_5.plot(kind='bar', width=0.9)
+    ax.set_xticklabels(labels, fontsize=6)
+    plt.title("Genreverteilung der Original Netflix-Titel", fontsize=10)
+    plt.show()
+
+
+def plot_union_original():
+    labels=['Original', 'Nicht Original']
+    fig = plt.figure(figsize=(5, 3))
+    plt.pie(df6["Anzahl"], autopct='%1.1f%%', startangle=90, pctdistance=0.85)
+    plt.legend(labels, loc="best")
+    plt.axis('equal')
+    plt.tight_layout()
+    plt.title("Anteil an Netflix-Originals in den beliebten Serien 2019 auf Netflix ", fontsize=10)
+
+    plt.show()
+
 
 def plot_release_platform():
     df = pd.read_csv("/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/datasets_pyspark/release_plattform_count.csv")
@@ -64,7 +90,6 @@ def errorbar_rating():
 
 def published_trending():
     df = pd.read_csv("/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/datasets_pyspark/trending_year_count.csv")
-
     labels = df["Date_Added"]
 
     plt.pie(df["Anzahl"], autopct='%1.1f%%', startangle=80, pctdistance=0.85)
@@ -73,7 +98,6 @@ def published_trending():
     fig = plt.gcf()
     fig.gca().add_artist(centre_circle)
     plt.axis('equal')
-    plt.tight_layout()
     plt.title("Veröffentlichungsjahre der beliebten Serien aus 2019 von Netflix", fontsize=10)
     plt.tight_layout()
     plt.show()
@@ -86,4 +110,8 @@ if __name__ == "__main__":
     plot_release_platform()
     errorbar_rating()
     published_trending()
+    plot_original_genres()
+    plot_union_original()
+
+
 
