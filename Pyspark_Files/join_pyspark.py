@@ -3,8 +3,6 @@ from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext
 from pyspark import sql
 from pyspark.sql.functions import lit
-from pyspark.sql import functions as F
-from pyspark.sql.functions import udf
 
 confCluster = SparkConf().setAppName("NetflixAnalysis")
 sc = SparkContext(conf=confCluster)
@@ -114,20 +112,13 @@ series_and_movies = series_and_movies.drop(*drop_col_series_and_movies)
 print("series_and_movies")
 series_and_movies.printSchema()
 # ======================================================================================================================
+
 collection = netflix_shows.join(series_and_movies, 'Title', 'full')
-print("collection:")
-collection.printSchema()
-
-collection_original = collection.join(original_netflix, 'Title', 'left')
-print("collection_original:")
-collection_original.printSchema()
-
-netflix_collection_imdb = collection_original.join(imdb_combined, 'Title', 'left')
-print("netflix_collection_imdb:")
-netflix_collection_imdb.printSchema()
-
-netflix_collection_imdb.toPandas().to_csv('/home/ko93jiy/BigData/Projekt/datasets/rdd_netflix_imdb_combined.csv', encoding='utf-8', index=False)
+collection = collection.join(original_netflix, 'Title', 'left')
+collection = collection.join(imdb_combined, 'Title', 'left')
+collection.toPandas().to_csv('/home/ko93jiy/BigData/Projekt/datasets/rdd_netflix_imdb_combined.csv', encoding='utf-8', index=False)
 
 trending_netflix = trending.join(netflix_shows, 'Title', 'left')
-trending_netflix_imdb = trending_netflix.join(imdb_combined_series, 'Title', 'left')
-trending_netflix_imdb.toPandas().to_csv('/home/ko93jiy/BigData/Projekt/datasets/rdd_trending_netflix_imdb_combined.csv', encoding='utf-8', index=False)
+trending_netflix = trending_netflix.join(original_netflix, 'Title', 'left')
+trending_netflix = trending_netflix.join(imdb_combined_series, 'Title', 'left')
+trending_netflix.toPandas().to_csv('/home/ko93jiy/BigData/Projekt/datasets/rdd_trending_netflix_imdb_combined.csv', encoding='utf-8', index=False)
