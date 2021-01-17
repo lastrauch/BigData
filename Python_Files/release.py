@@ -90,24 +90,31 @@ import matplotlib.pyplot as plt
 
 #====================== Sort by Rating ==================================
 
+# df = pd.read_csv('../datasets_pyspark/rdd_netflix_imdb_combined_preprocessed.csv', na_values=['-'])
+#
+# netflix_rating = df.loc[df['Netflix']==1, 'Rating']
+# hulu_rating = df.loc[df['Hulu']==1, 'Rating']
+# prime_rating = df.loc[df['Prime Video']==1, 'Rating']
+# disney_rating = df.loc[df['Disney+']==1, 'Rating']
+#
+# print(netflix_rating.mean())
+# print(netflix_rating.var())
+# print(hulu_rating.mean())
+# print(hulu_rating.var())
+# print(prime_rating.mean())
+# print(prime_rating.var())
+# print(disney_rating.mean())
+# print(disney_rating.var())
+#
+#
+# netflix_rating = dict()
+# hulu_rating = dict()
+# prime_rating = dict()
+# disney_rating = dict()
+
+#======================= Netflix Originals =============================
+
 df = pd.read_csv('../datasets_pyspark/rdd_netflix_imdb_combined_preprocessed.csv', na_values=['-'])
+netflix_original = df.loc[df['Original'] == True, 'Genre']
 
-netflix_rating = df.loc[df['Netflix']==1, 'Rating']
-hulu_rating = df.loc[df['Hulu']==1, 'Rating']
-prime_rating = df.loc[df['Prime Video']==1, 'Rating']
-disney_rating = df.loc[df['Disney+']==1, 'Rating']
-
-print(netflix_rating.mean())
-print(netflix_rating.var())
-print(hulu_rating.mean())
-print(hulu_rating.var())
-print(prime_rating.mean())
-print(prime_rating.var())
-print(disney_rating.mean())
-print(disney_rating.var())
-
-
-netflix_rating = dict()
-hulu_rating = dict()
-prime_rating = dict()
-disney_rating = dict()
+print(netflix_original)

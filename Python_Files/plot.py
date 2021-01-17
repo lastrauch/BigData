@@ -12,7 +12,7 @@ df4 = pd.read_csv("../datasets_pyspark/release_plattform_mean_var.csv")
 
 
 def plot_gesamt_rausgekommen():
-    plt.bar(df['Date_Added'], df['Anzahl'])
+    plt.bar(df['Date_Added'], df['Anzahl'], color = 'seagreen', edgecolor='blue')
     plt.title("Anzahl hinzugefügter Titel über alle Plattformen im jeweiligen Jahr", fontsize=10)
     plt.xlabel("Jahr")
     plt.ylabel("Anzahl")
@@ -46,24 +46,24 @@ def plot_trending_genres():
     plt.show()
 
 def plot_release_platform():
-    df = pd.read_csv("/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/datasets_pyspark/release_plattform_count.csv")
+    df = pd.read_csv("../datasets_pyspark/release_plattform_count.csv")
 
     df = df.drop('Jahr', 1)
     ax = df.plot(kind = 'bar', width=0.9)
     ax.set_xticklabels( ('2014', '2015','2016','2017','2018','2019','2020') )
     ax.legend(labels=['Netflix', 'Prime', 'Hulu', 'Disney+'])
     plt.title("Anzahl hinzugefügter Titel der unterschiedlichen Plattformen im jeweiligen Jahr", fontsize=10)
-
     plt.show()
 
 def errorbar_rating():
     labels = df4["Platform"]
     plt.errorbar(labels, df4["mean"], yerr=df4["variance"], linestyle='None', marker='o' )
+    plt.ylim([0,10])
     plt.title("Varianz und Durchschnitt des IMDB Ratings der unterschiedlichen Plattformen", fontsize=10)
     plt.show()
 
 def published_trending():
-    df = pd.read_csv("/Users/lstrauch/Documents/Uni/Semester_3/Big_Data/Projekt/datasets_pyspark/trending_year_count.csv")
+    df = pd.read_csv("../datasets_pyspark/trending_year_count.csv")
 
     labels = df["Date_Added"]
 
@@ -78,6 +78,9 @@ def published_trending():
     plt.tight_layout()
     plt.show()
 
+def originals_genres():
+    print('pimmel')
+
 
 if __name__ == "__main__":
     plot_gesamt_rausgekommen()
@@ -86,4 +89,3 @@ if __name__ == "__main__":
     plot_release_platform()
     errorbar_rating()
     published_trending()
-
