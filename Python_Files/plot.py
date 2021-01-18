@@ -102,14 +102,34 @@ def published_trending():
     plt.tight_layout()
     plt.show()
 
+def market_value():
+    market = pd.read_csv("../datasets/netflix_marketvalue.csv")
+    release = pd.read_csv("../datasets_pyspark/release_plattform_count.csv")
+
+    plt.figure()
+
+    plt.ylim([0,3500])
+    labels = release['Jahr']
+    plt.bar(labels, release['Netflix_Anzahl'], label = labels, color = 'darkred')
+    plt.ylabel("Released movies by Netflix")
+
+    axes2 = plt.twinx()
+    axes2 = plt.twiny()
+    axes2.plot(market['Date'],market['Open'], color='darkorange')
+    axes2.set_ylim(0,700)
+    axes2.set_ylabel("marketvalue of Netflix")
+    axes2.axes.get_xaxis().set_visible(False)
+    plt.show()
+
 
 
 if __name__ == "__main__":
-    plot_gesamt_rausgekommen()
-    plot_genres_year()
-    plot_trending_genres()
-    plot_release_platform()
-    errorbar_rating()
-    published_trending()
-    plot_original_genres()
-    plot_union_original()
+    # plot_gesamt_rausgekommen()
+    # plot_genres_year()
+    # plot_trending_genres()
+    # plot_release_platform()
+    # errorbar_rating()
+    # published_trending()
+    # plot_original_genres()
+    # plot_union_original()
+    market_value()
